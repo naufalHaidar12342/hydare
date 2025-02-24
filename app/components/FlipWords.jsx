@@ -51,7 +51,7 @@ export default function FlipWords({ words, duration = 3000, className }) {
 					position: "absolute",
 				}}
 				className={classMerging(
-					"z-10 inline-block relative text-left text-waikawa-gray-300 px-2",
+					"inline-block relative text-left text-waikawa-gray-300 px-0",
 					className
 				)}
 				key={currentWordIndex}
