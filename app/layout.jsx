@@ -9,6 +9,29 @@ export const metadata = {
 	title: "Hydare",
 	description:
 		"One-man studio based in Venetië van Java. Making your dream website comes true, one at a time.",
+	metadataBase: "https://hydare.vercel.app",
+	robots: {
+		index: true,
+		follow: true,
+		nocache: true,
+	},
+	authors: [{ name: "Naufal Haidar Rauf", url: "https://hydiary.my.id" }],
+	keywords: [
+		"Next.js 14",
+		"Website Development",
+		"Freelance",
+		"Independent studio",
+		"React",
+	],
+	creator: "Naufal Haidar Rauf",
+	publisher: "Hydare",
+	openGraph: {
+		title: "Hydare",
+		description: `One-man studio based in Venetië van Java. Making your dream website comes true, one at a time.`,
+		url: "https://hydare.vercel.app",
+		siteName: "Hydare",
+		type: "website",
+	},
 };
 
 export default function RootLayout({ children }) {
