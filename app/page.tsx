@@ -90,6 +90,14 @@ export default function Home() {
 						<IconLink />
 						business.hydare@proton.me
 					</a>
+					<a
+						href="https://contra.com/naufal_haidar_rauf_da817uk4?referralExperimentNid=SOCIAL_REFERRAL_PROGRAM&referrerUsername=naufal_haidar_rauf_da817uk4"
+						target="_blank"
+						className="inline-flex gap-x-2 items-center underline decoration-waikawa-gray-400"
+					>
+						<IconLink />
+						Contra ✨
+					</a>
 				</div>
 			</div>
 		</section>

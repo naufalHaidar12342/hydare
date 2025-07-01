@@ -20,14 +20,22 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "app/components/FlipWords.tsx", "app/helpers/smooth-scrolling-provider.js"  ],
+    "**/*.tsx",
+    "app/components/FlipWords.tsx",
+    "app/helpers/smooth-scrolling-provider.js"
+  ],
   "exclude": [
     "node_modules"
   ]
