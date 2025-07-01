@@ -4,12 +4,13 @@ import Footer from "./components/Footer";
 import { IBMPlexMono } from "./fonts/IBMPlexMono";
 import { BebasNeue } from "./fonts/BebasNeue";
 import SmoothScrollingProvider from "./helpers/smooth-scrolling-provider";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: "Hydare",
 	description:
 		"One-man studio based in Venetië van Java. Making your dream website comes true, one at a time.",
-	metadataBase: "https://hydare.vercel.app",
+	metadataBase: new URL("https://hydare.vercel.app"),
 	robots: {
 		index: true,
 		follow: true,
@@ -34,7 +35,9 @@ export const metadata = {
 	},
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+	children,
+}: Readonly<{ children: React.ReactNode }>) {
 	return (
 		<html lang="en" className="scroll-smooth scroll-my-4">
 			<body

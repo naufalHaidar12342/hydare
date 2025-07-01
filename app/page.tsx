@@ -4,8 +4,8 @@ import { heroWordsList } from "./utilities/hero-words-list";
 import { projectsPortfolio } from "./utilities/projects-portfolio";
 import SplideProjects from "./components/SplideProjects";
 import { Suspense } from "react";
-import { servicesList } from "./utilities/services-list";
 import ServicesCard from "./components/ServicesCard";
+import { servicesList } from "./utilities/services-list";
 import { IconLink } from "@tabler/icons-react";
 
 export default function Home() {
@@ -63,7 +63,7 @@ export default function Home() {
 						<ServicesCard
 							key={`Service index for "${item.serviceName}"`}
 							serviceName={item.serviceName}
-							serviceIcon={item.serviceIcon}
+							serviceIcon={<item.serviceIcon size={48} />}
 							serviceDescription={item.serviceDescription}
 						/>
 					))}

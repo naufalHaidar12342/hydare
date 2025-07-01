@@ -2,7 +2,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import classMerging from "../helpers/class-merging";
 import { AnimatePresence, motion, LayoutGroup } from "motion/react";
-export default function FlipWords({ words, duration = 3000, className }) {
+export default function FlipWords({ words, duration = 3000, className }:{
+	words: string[];
+	duration?: number;
+	className?: string;
+}) {
 	const [currentWordIndex, setCurrentWordIndex] = useState(words[0]);
 	const [isFlipping, setIsFlipping] = useState(false);
 
@@ -62,12 +66,12 @@ export default function FlipWords({ words, duration = 3000, className }) {
 						initial={{
 							opacity: 0,
 							y: 10,
-							filters: "blur(10px)",
+							filter: "blur(10px)",
 						}}
 						animate={{
 							opacity: 1,
 							y: 0,
-							filters: "blur(0px)",
+							filter: "blur(0px)",
 						}}
 						transition={{
 							delay: index * 0.3,
