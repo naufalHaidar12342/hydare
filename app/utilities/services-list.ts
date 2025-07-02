@@ -3,6 +3,11 @@ import {
 	IconPalette,
 	IconBlockquote,
 } from "@tabler/icons-react";
+export type Services = {
+	serviceName: string;
+	serviceIcon: React.ComponentType<any>;
+	serviceDescription: string;
+};
 export const servicesList = [
 	{
 		serviceName: "Slicing Design",

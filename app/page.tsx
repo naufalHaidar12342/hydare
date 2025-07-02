@@ -1,14 +1,17 @@
 import FlipWords from "./components/FlipWords";
 import Link from "next/link";
 import { heroWordsList } from "./utilities/hero-words-list";
-import { projectsPortfolio } from "./utilities/projects-portfolio";
+import projectsPortfolio from "./utilities/projects-portfolio";
 import SplideProjects from "./components/SplideProjects";
 import { Suspense } from "react";
 import ServicesCard from "./components/ServicesCard";
 import { servicesList } from "./utilities/services-list";
 import { IconLink } from "@tabler/icons-react";
+import Meteors from "./components/Meteors";
 
 export default function Home() {
+	const fetchedProjects = projectsPortfolio();
+	const fetchedServices = servicesList;
 	return (
 		<section className="min-h-lvh flex flex-col py-10 px-8 max-md:gap-y-10 font-[family-name:var(--font-ibm-plex-mono)]">
 			<div
@@ -20,7 +23,7 @@ export default function Home() {
 					<FlipWords words={heroWordsList} />
 					<span>comes true, one at a time.</span>
 				</h1>
-				<div className="flex flex-col gap-y-4 md:flex-row md:gap-x-4">
+				<div className="flex flex-col gap-y-4 mt-6 md:flex-row md:gap-x-4">
 					<Link
 						href="/#hydare"
 						className="md:w-fit p-3 rounded-xl text-xl font-semibold bg-waikawa-gray-300 text-obsidian"
@@ -36,6 +39,9 @@ export default function Home() {
 				</div>
 			</div>
 			<div className="w-full flex flex-col" id="hydare">
+				<div className="max-sm:hidden sm:relative sm:items-center">
+					<Meteors numbersOfMeteor={50} />
+				</div>
 				<h2 className="text-5xl font-normal font-[family-name:var(--font-bebas-neue)]">
 					Hydare
 				</h2>
@@ -51,7 +57,7 @@ export default function Home() {
 					, focusing on creating website to our various clients
 				</p>
 				<Suspense fallback={<div>Loading our projects...</div>}>
-					<SplideProjects projects={projectsPortfolio} />
+					<SplideProjects projects={fetchedProjects} />
 				</Suspense>
 			</div>
 			<div className="max-md:mt-8 w-full flex flex-col" id="hydare-services">
