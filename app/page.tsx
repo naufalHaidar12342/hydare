@@ -39,7 +39,7 @@ export default function Home() {
 				</div>
 			</div>
 			<div className="w-full flex flex-col" id="hydare">
-				<div className="max-sm:hidden sm:relative sm:items-center">
+				<div className="max-sm:hidden sm:relative sm:items-center motion-reduce:hidden">
 					<Meteors numbersOfMeteor={50} />
 				</div>
 				<h2 className="text-5xl font-normal font-[family-name:var(--font-bebas-neue)]">
@@ -65,7 +65,7 @@ export default function Home() {
 					Our Services
 				</h3>
 				<div className="grid max-md:grid-cols-1 md:max-lg:grid-cols-2 lg:grid-cols-3 gap-5 mt-2">
-					{servicesList.map((item) => (
+					{fetchedServices.map((item) => (
 						<ServicesCard
 							key={`Service index for "${item.serviceName}"`}
 							serviceName={item.serviceName}

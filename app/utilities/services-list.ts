@@ -3,12 +3,14 @@ import {
 	IconPalette,
 	IconBlockquote,
 } from "@tabler/icons-react";
+
 export type Services = {
 	serviceName: string;
 	serviceIcon: React.ComponentType<any>;
 	serviceDescription: string;
 };
-export const servicesList = [
+
+export const servicesList: Services[] = [
 	{
 		serviceName: "Slicing Design",
 		serviceIcon: IconPalette,
@@ -26,5 +28,11 @@ export const servicesList = [
 		serviceIcon: IconBlockquote,
 		serviceDescription:
 			"Helping you to add content to your website using Headless CMS (Hygraph, Contentful CMS, etc)",
+	},
+	{
+		serviceName: "Documentation",
+		serviceIcon: IconBlockquote,
+		serviceDescription:
+			"Providing documentation for your website, so you can maintain your website by yourself",
 	},
 ];

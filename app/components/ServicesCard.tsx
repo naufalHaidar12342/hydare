@@ -24,31 +24,34 @@ export default function ServicesCard({
 	const ROTATION_RANGE = 32.5;
 	const HALF_ROTATION_RANGE = ROTATION_RANGE / 2;
 
-	const ref = useRef<HTMLDivElement | null>(null);
+	const cardRef = useRef<HTMLDivElement | null>(null);
 
 	const x_Axis = useMotionValue(0);
 	const y_Axis = useMotionValue(0);
 
-	const xSpring = useSpring(x_Axis);
-	const ySpring = useSpring(y_Axis);
+	const xAxisSpringAnimation = useSpring(x_Axis);
+	const yAxisSpringAnimation = useSpring(y_Axis);
 
-	const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
+	const motionTransform = useMotionTemplate`rotateX(${xAxisSpringAnimation}deg) rotateY(${yAxisSpringAnimation}deg)`;
 
 	const handleMouseMove = (
 		events: React.MouseEvent<HTMLDivElement, MouseEvent>
 	) => {
-		if (!ref.current) return [0, 0];
+		if (!cardRef.current) return [0, 0];
 
-		const clientRectangle = ref.current.getBoundingClientRect();
+		const cardSizeAndPosition = cardRef.current.getBoundingClientRect();
 
-		const cardWidth = clientRectangle.width;
-		const cardHeight = clientRectangle.height;
+		const cardWidth = cardSizeAndPosition.width;
+		const cardHeight = cardSizeAndPosition.height;
 
-		const mouseX = (events.clientX - clientRectangle.left) * ROTATION_RANGE;
-		const mouseY = (events.clientY - clientRectangle.top) * ROTATION_RANGE;
+		const mousePositionX_Axis =
+			(events.clientX - cardSizeAndPosition.left) * ROTATION_RANGE;
+		const mousePositionOnY_Axis =
+			(events.clientY - cardSizeAndPosition.top) * ROTATION_RANGE;
 
-		const rotationX = (mouseY / cardHeight - HALF_ROTATION_RANGE) * -1;
-		const rotationY = mouseX / cardWidth - HALF_ROTATION_RANGE;
+		const rotationX =
+			(mousePositionOnY_Axis / cardHeight - HALF_ROTATION_RANGE) * -1;
+		const rotationY = mousePositionX_Axis / cardWidth - HALF_ROTATION_RANGE;
 
 		x_Axis.set(rotationX);
 		y_Axis.set(rotationY);
@@ -61,10 +64,10 @@ export default function ServicesCard({
 
 	return (
 		<motion.div
-			ref={ref}
+			ref={cardRef}
 			onMouseMove={handleMouseMove}
 			onMouseLeave={handleMouseLeave}
-			style={{ transform }}
+			style={{ transform: motionTransform }}
 			className="relative w-full bg-waikawa-gray-300 rounded-2xl p-2 transform-3d"
 		>
 			<div className="h-full flex flex-col p-5 rounded-xl bg-gradient-to-br from-obsidian via-waikawa-gray-950 to-obsidian transform-3d translate-z-[75px]">
