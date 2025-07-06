@@ -3,8 +3,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
+	--color-background: #0b1215;
+	--color-foreground: #f8f8ff;
 	/* converting hex to oklch with the help of this tool:
 	 * https://oklch.com/ */
 	--color-waikawa-gray-50: oklch(0.9747 0.0051 247.88) /* #f4f7fa */;

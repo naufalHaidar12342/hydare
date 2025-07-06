@@ -8,10 +8,13 @@ import ServicesCard from "./components/ServicesCard";
 import { servicesList } from "./utilities/services-list";
 import { IconLink } from "@tabler/icons-react";
 import Meteors from "./components/Meteors";
+import contactList from "./utilities/contact-list";
+import LinksReveal from "./components/LinksReveal";
 
 export default function Home() {
 	const fetchedProjects = projectsPortfolio();
 	const fetchedServices = servicesList;
+	const fetchedContacts = contactList();
 	return (
 		<section className="min-h-lvh flex flex-col py-10 px-8 max-md:gap-y-10 font-[family-name:var(--font-ibm-plex-mono)]">
 			<div
@@ -39,7 +42,7 @@ export default function Home() {
 				</div>
 			</div>
 			<div className="w-full flex flex-col" id="hydare">
-				<div className="max-sm:hidden sm:relative sm:items-center motion-reduce:hidden">
+				<div className="max-md:hidden md:relative md:flex md:items-center motion-reduce:hidden">
 					<Meteors numbersOfMeteor={50} />
 				</div>
 				<h2 className="text-5xl font-normal font-[family-name:var(--font-bebas-neue)]">
@@ -79,31 +82,15 @@ export default function Home() {
 				<h2 className="text-5xl font-normal font-[family-name:var(--font-bebas-neue)]">
 					Hire Us
 				</h2>
-				<div className="flex flex-col font-bold">
-					<a
-						href="https://www.sribu.com/id/users/nhweb12342"
-						target="_blank"
-						className="inline-flex gap-x-2 items-center underline decoration-waikawa-gray-400"
-					>
-						<IconLink />
-						Sribu (previously Sribulancer)
-					</a>
-					<a
-						href="mailto:business.hydare@proton.me"
-						target="_blank"
-						className="inline-flex gap-x-2 items-center underline decoration-waikawa-gray-400"
-					>
-						<IconLink />
-						business.hydare@proton.me
-					</a>
-					<a
-						href="https://contra.com/naufal_haidar_rauf_da817uk4?referralExperimentNid=SOCIAL_REFERRAL_PROGRAM&referrerUsername=naufal_haidar_rauf_da817uk4"
-						target="_blank"
-						className="inline-flex gap-x-2 items-center underline decoration-waikawa-gray-400"
-					>
-						<IconLink />
-						Contra ✨
-					</a>
+				<div className="flex flex-col gap-3 ">
+					{fetchedContacts.map((contact) => (
+						<LinksReveal
+							urlString={contact.contactUrl}
+							key={contact.contactName}
+						>
+							{contact.contactName}
+						</LinksReveal>
+					))}
 				</div>
 			</div>
 		</section>
