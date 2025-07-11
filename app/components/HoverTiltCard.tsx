@@ -12,14 +12,14 @@ import {
  * (Tom Is Loading - YouTube) https://youtu.be/-PBw8mv9ZYc?si=mZ7UZM-Kwb0eiIFK
  * https://www.hover.dev/components/cards */
 
-export default function ServicesCard({
-	serviceIcon = <IconBrandNextjs />,
-	serviceName = "Website Development",
-	serviceDescription = "Design and develop your website from scratch",
+export default function HoverTiltCard({
+	accessoryIcon = <IconBrandNextjs />,
+	cardTitle = "Ttile Card",
+	cardContent = "This part will be the description of the card. Feel free to write anything you want here.",
 }: {
-	serviceIcon?: ReactNode;
-	serviceName?: string;
-	serviceDescription?: string;
+	accessoryIcon?: ReactNode;
+	cardTitle?: string;
+	cardContent?: string;
 }) {
 	const ROTATION_RANGE = 32.5;
 	const HALF_ROTATION_RANGE = ROTATION_RANGE / 2;
@@ -71,12 +71,12 @@ export default function ServicesCard({
 			className="relative w-full bg-waikawa-gray-300 rounded-2xl p-2 transform-3d"
 		>
 			<div className="h-full flex flex-col p-5 rounded-xl bg-gradient-to-br from-obsidian via-waikawa-gray-950 to-obsidian transform-3d translate-z-[75px]">
-				{serviceIcon}
+				{accessoryIcon}
 				<div className="flex flex-col mt-3">
 					<h3 className="text-xl uppercase font-semibold font-[family-name:var(--font-ibm-plex-mono)]">
-						{serviceName}
+						{cardTitle}
 					</h3>
-					<p className="mt-2">{serviceDescription}</p>
+					<p className="mt-2">{cardContent}</p>
 				</div>
 			</div>
 		</motion.div>

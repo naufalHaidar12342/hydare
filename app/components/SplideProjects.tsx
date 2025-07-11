@@ -29,13 +29,13 @@ export default function SplideProjects({ projects }: { projects: Projects[] }) {
 			{projects.map((project) => (
 				<SplideSlide
 					key={`project-${project.projectName}`}
-					className="h-[600px] md:h-[550px] gap-1 p-2 flex items-center"
+					className="h-full md:h-[650px] gap-1 p-2 flex items-center"
 				>
 					<div className="flex flex-col grow">
-						<div className="mb-3 w-full md:w-80 h-60 relative flex items-center justify-center overflow-hidden rounded-xl border-4 border-waikawa-gray-300">
+						<div className="mb-3 w-full h-60 md:h-[550px] relative flex items-center justify-center overflow-hidden rounded-xl border-4 border-waikawa-gray-300">
 							<Image
-								src={"/favicon.ico"}
-								alt="example"
+								src={project.projectImageUrl}
+								alt={`Image for project ${project.projectName}`}
 								className="transform hover:scale-105 transition-transform duration-300!"
 								style={{ objectFit: "cover" }}
 								fill
@@ -47,7 +47,7 @@ export default function SplideProjects({ projects }: { projects: Projects[] }) {
 							href={`${project.previewURL}`}
 							className="mt-4 gap-x-1 flex items-center justify-center md:justify-start border-2 border-waikawa-gray-300 text-lg font-bold p-3 md:w-fit rounded-xl transition-all duration-300 hover:border-dashed hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-lg hover:shadow-[4px_4px_0px_var(--color-waikawa-gray-600)] active:translate-x-[0px] active:translate-y-[0px] active:rounded-xl active:shadow-none"
 						>
-							Live view
+							Live View
 							<IconExternalLink size={24} />
 						</Link>
 					</div>

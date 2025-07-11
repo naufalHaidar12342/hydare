@@ -4,17 +4,19 @@ import { heroWordsList } from "./utilities/hero-words-list";
 import projectsPortfolio from "./utilities/projects-portfolio";
 import SplideProjects from "./components/SplideProjects";
 import { Suspense } from "react";
-import ServicesCard from "./components/ServicesCard";
-import { servicesList } from "./utilities/services-list";
+import servicesList from "./utilities/services-list";
 import { IconLink } from "@tabler/icons-react";
 import Meteors from "./components/Meteors";
 import contactList from "./utilities/contact-list";
 import LinksReveal from "./components/LinksReveal";
+import HoverTiltCard from "./components/HoverTiltCard";
+import technologyList from "./utilities/technology-list";
 
 export default function Home() {
 	const fetchedProjects = projectsPortfolio();
-	const fetchedServices = servicesList;
+	const fetchedServices = servicesList();
 	const fetchedContacts = contactList();
+	const fetchedTechStack = technologyList();
 	return (
 		<section className="min-h-lvh flex flex-col py-10 px-8 max-md:gap-y-10 font-[family-name:var(--font-ibm-plex-mono)]">
 			<div
@@ -64,25 +66,40 @@ export default function Home() {
 				</Suspense>
 			</div>
 			<div className="max-md:mt-8 w-full flex flex-col" id="hydare-services">
-				<h3 className="text-4xl font-normal font-[family-name:var(--font-bebas-neue)]">
+				<h3 className="text-4xl font-normal tracking-wider font-[family-name:var(--font-bebas-neue)]">
 					Our Services
 				</h3>
 				<div className="grid max-md:grid-cols-1 md:max-lg:grid-cols-2 lg:grid-cols-3 gap-5 mt-2">
 					{fetchedServices.map((item) => (
-						<ServicesCard
+						<HoverTiltCard
 							key={`Service index for "${item.serviceName}"`}
-							serviceName={item.serviceName}
-							serviceIcon={<item.serviceIcon size={48} />}
-							serviceDescription={item.serviceDescription}
+							cardTitle={item.serviceName}
+							accessoryIcon={<item.serviceIcon size={48} />}
+							cardContent={item.serviceDescription}
+						/>
+					))}
+				</div>
+			</div>
+			<div className="mt-8 w-full flex flex-col" id="hydare-tech-stack">
+				<h3 className="text-4xl uppercase tracking-wider font-[family-name:var(--font-bebas-neue)]">
+					Technologies We Use
+				</h3>
+				<div className="grid max-md:grid-cols-1 md:max-lg:grid-cols-2 lg:grid-cols-3 gap-5 mt-2">
+					{fetchedTechStack.map((item) => (
+						<HoverTiltCard
+							key={`Service index for "${item.technologyName}"`}
+							cardTitle={item.technologyName}
+							accessoryIcon={<item.technologyIcon size={48} />}
+							cardContent={item.technologyDescription}
 						/>
 					))}
 				</div>
 			</div>
 			<div className="mt-8 flex flex-col" id="hire-us">
-				<h2 className="text-5xl font-normal font-[family-name:var(--font-bebas-neue)]">
+				<h2 className="text-5xl font-normal tracking-wider font-[family-name:var(--font-bebas-neue)]">
 					Hire Us
 				</h2>
-				<div className="flex flex-col gap-3 ">
+				<div className="mt-3 flex flex-col gap-3 ">
 					{fetchedContacts.map((contact) => (
 						<LinksReveal
 							urlString={contact.contactUrl}
