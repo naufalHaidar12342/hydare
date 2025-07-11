@@ -29,10 +29,10 @@ export default function SplideProjects({ projects }: { projects: Projects[] }) {
 			{projects.map((project) => (
 				<SplideSlide
 					key={`project-${project.projectName}`}
-					className="h-full md:h-[650px] gap-1 p-2 flex items-center"
+					className="h-full md:h-[600px] gap-1 p-2 flex items-center"
 				>
 					<div className="flex flex-col grow">
-						<div className="mb-3 w-full h-60 md:h-[550px] relative flex items-center justify-center overflow-hidden rounded-xl border-4 border-waikawa-gray-300">
+						<div className="mb-3 w-full h-60 md:h-[400px] md:w-[600px] relative flex items-center justify-center overflow-hidden rounded-xl border-4 border-waikawa-gray-300">
 							<Image
 								src={project.projectImageUrl}
 								alt={`Image for project ${project.projectName}`}

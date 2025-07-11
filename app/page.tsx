@@ -44,7 +44,7 @@ export default function Home() {
 				</div>
 			</div>
 			<div className="w-full flex flex-col" id="hydare">
-				<div className="max-md:hidden md:relative md:flex md:items-center motion-reduce:hidden">
+				<div className="max-lg:hidden lg:relative lg:flex lg:items-center lg:motion-reduce:hidden">
 					<Meteors numbersOfMeteor={50} />
 				</div>
 				<h2 className="text-5xl font-normal font-[family-name:var(--font-bebas-neue)]">
