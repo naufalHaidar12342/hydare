@@ -15,7 +15,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "plugins": [
       {
         "name": "next"
@@ -34,7 +34,8 @@
     "**/*.ts",
     "**/*.tsx",
     "app/components/FlipWords.tsx",
-    "app/helpers/smooth-scrolling-provider.js"
+    "app/helpers/smooth-scrolling-provider.js",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
