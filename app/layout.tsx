@@ -41,7 +41,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" className="scroll-smooth scroll-my-4">
 			<body
-				className={`${IBMPlexMono.variable} ${BebasNeue.variable} antialiased mx-auto max-w-(--breakpoint-lg)`}
+				className={`${IBMPlexMono.variable} ${BebasNeue.variable} antialiased mx-auto max-w-(--breakpoint-lg) py-14`}
 			>
 				<main className="">
 					<SmoothScrollingProvider>{children}</SmoothScrollingProvider>

@@ -29,8 +29,8 @@ export default function Meteors({
 					<div
 						key={"meteor number " + index}
 						className={classMerging(
-							"animate-meteor-effect absolute h-0.5 w-0.5 rotate-[45deg] rounded-[9999px] bg-waikawa-gray-400 shadow-[0_0_0_1px_#ffffff10]",
-							"before:absolute before:top-1/2 before:h-[1px] before:w-[50px] before:-translate-y-[50%] before:transform before:bg-gradient-to-r before:from-waikawa-gray-600 before:to-transparent before:content-['']",
+							"animate-meteor-effect absolute h-0.5 w-0.5 rotate-45 rounded-[9999px] bg-waikawa-gray-400 shadow-[0_0_0_1px_#ffffff10]",
+							"before:absolute before:top-1/2 before:h-px before:w-12.5 before:-translate-y-[50%] before:transform before:bg-linear-to-r before:from-waikawa-gray-600 before:to-transparent before:content-['']",
 							className,
 						)}
 						style={{

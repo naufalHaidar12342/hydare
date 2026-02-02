@@ -70,10 +70,10 @@ export default function HoverTiltCard({
 			style={{ transform: motionTransform }}
 			className="relative w-full bg-waikawa-gray-300 rounded-2xl p-2 transform-3d"
 		>
-			<div className="h-full flex flex-col p-5 rounded-xl bg-gradient-to-br from-obsidian via-waikawa-gray-950 to-obsidian transform-3d translate-z-[75px]">
+			<div className="h-full flex flex-col p-5 rounded-xl bg-linear-to-br from-obsidian via-waikawa-gray-950 to-obsidian transform-3d translate-z-18.75">
 				{accessoryIcon}
 				<div className="flex flex-col mt-3">
-					<h3 className="text-xl uppercase font-semibold font-[family-name:var(--font-ibm-plex-mono)]">
+					<h3 className="text-xl uppercase font-semibold font-(family-name:--font-ibm-plex-mono)">
 						{cardTitle}
 					</h3>
 					<p className="mt-2">{cardContent}</p>

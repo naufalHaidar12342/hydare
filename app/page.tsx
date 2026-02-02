@@ -18,7 +18,7 @@ export default function Home() {
 	const fetchedContacts = contactList();
 	const fetchedTechStack = technologyList();
 	return (
-		<section className="min-h-lvh flex flex-col py-10 px-8 max-md:gap-y-10 font-[family-name:var(--font-ibm-plex-mono)]">
+		<section className="min-h-lvh flex flex-col py-10 px-8 max-md:gap-y-10 font-(family-name:--font-ibm-plex-mono)">
 			<div
 				className="h-dvh w-full flex flex-col justify-center gap-y-3"
 				aria-label="Hero section"
@@ -47,7 +47,7 @@ export default function Home() {
 				<div className="max-lg:hidden lg:relative lg:flex lg:items-center lg:motion-reduce:hidden">
 					<Meteors numbersOfMeteor={50} />
 				</div>
-				<h2 className="text-5xl font-normal font-[family-name:var(--font-bebas-neue)]">
+				<h2 className="text-5xl font-normal font-(family-name:--font-bebas-neue)">
 					Hydare
 				</h2>
 				<p className="text-2xl">
@@ -66,7 +66,7 @@ export default function Home() {
 				</Suspense>
 			</div>
 			<div className="max-md:mt-8 w-full flex flex-col" id="hydare-services">
-				<h3 className="text-4xl font-normal tracking-wider font-[family-name:var(--font-bebas-neue)]">
+				<h3 className="text-4xl font-normal tracking-wider font-(family-name:--font-bebas-neue)">
 					Our Services
 				</h3>
 				<div className="grid max-md:grid-cols-1 md:max-lg:grid-cols-2 lg:grid-cols-3 gap-5 mt-2">
@@ -81,7 +81,7 @@ export default function Home() {
 				</div>
 			</div>
 			<div className="mt-8 w-full flex flex-col" id="hydare-tech-stack">
-				<h3 className="text-4xl uppercase tracking-wider font-[family-name:var(--font-bebas-neue)]">
+				<h3 className="text-4xl uppercase tracking-wider font-(family-name:--font-bebas-neue)">
 					Technologies We Use
 				</h3>
 				<div className="grid max-md:grid-cols-1 md:max-lg:grid-cols-2 lg:grid-cols-3 gap-5 mt-2">
@@ -96,7 +96,7 @@ export default function Home() {
 				</div>
 			</div>
 			<div className="mt-8 flex flex-col" id="hire-us">
-				<h2 className="text-5xl font-normal tracking-wider font-[family-name:var(--font-bebas-neue)]">
+				<h2 className="text-5xl font-normal tracking-wider font-(family-name:--font-bebas-neue)">
 					Hire Us
 				</h2>
 				<div className="mt-3 flex flex-col gap-3 ">
