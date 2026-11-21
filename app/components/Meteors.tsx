@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
 import classMerging from "../helpers/class-merging";
 import { motion } from "motion/react";
 
@@ -11,19 +10,6 @@ export default function Meteors({
 	className?: string;
 }) {
 	const meteorCount = numbersOfMeteor || 20;
-	const [timings, setTimings] = useState<{ delay: number; duration: number }[]>(
-		[],
-	);
-
-	// Generate randomness after mount so server and client render the same initial styles.
-	useEffect(() => {
-		setTimings(
-			Array.from({ length: meteorCount }, () => ({
-				delay: Math.random() * 5,
-				duration: Math.floor(Math.random() * 5) + 5,
-			})),
-		);
-	}, [meteorCount]);
 
 	return (
 		// Break out of the content's max-width and cover the viewport.
@@ -39,7 +25,9 @@ export default function Meteors({
 			{Array.from({ length: meteorCount }, (_element, index) => {
 				// Percentages keep the distribution responsive to the viewport width.
 				const position = (index / meteorCount) * 100;
-				const timing = timings[index];
+				const duration = 5 + (index % 5);
+				// Negative animation delays start each meteor partway through its cycle instead of waiting at the top.
+				const delay = -((index / meteorCount) * duration);
 
 				return (
 					<div
@@ -52,8 +40,8 @@ export default function Meteors({
 						style={{
 							top: "-10px",
 							left: `${position}%`,
-							animationDelay: `${timing?.delay ?? 0}s`,
-							animationDuration: `${timing?.duration ?? 5}s`,
+							animationDelay: `${delay}s`,
+							animationDuration: `${duration}s`,
 						}}
 					/>
 				);
