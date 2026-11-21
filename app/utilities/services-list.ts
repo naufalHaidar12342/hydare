@@ -4,7 +4,8 @@ import {
 	IconBlockquote,
 	IconGlobe,
 	IconWorldWww,
-	IconWriting,
+  IconWriting,
+	IconKeyframes
 } from "@tabler/icons-react";
 
 export type Services = {
@@ -16,28 +17,18 @@ export type Services = {
 export default function servicesList(): Services[] {
 	return [
 		{
-			serviceName: "Slicing Design",
-			serviceIcon: IconPalette,
+			serviceName: "Video editing",
+			serviceIcon: IconKeyframes,
 			serviceDescription:
-				"Implementing your website design (preferrably design file in Figma) to a real website",
+				"Helping you make compilation of funny, silly, epic moments, and more, using provided video (typically from live stream).",
 		},
 		{
 			serviceName: "Full Website Development",
 			serviceIcon: IconWorldWww,
 			serviceDescription:
-				"Designing website from wireframing with Figma, implement/slicing with Next.js, all the way to deploying to hosting provider",
+				"I will help designing your website, from rough design, making wireframe, implementing the design with code, and deploying it on hosting provider of your choosing",
 		},
-		{
-			serviceName: "Content Entries",
-			serviceIcon: IconBlockquote,
-			serviceDescription:
-				"Helping you to add content to your website using Headless CMS (Hygraph, Contentful CMS, etc)",
-		},
-		{
-			serviceName: "Documentation",
-			serviceIcon: IconWriting,
-			serviceDescription:
-				"Providing documentation for your website, so you can maintain your website by yourself",
-		},
+
+
 	];
 }

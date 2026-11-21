@@ -5,11 +5,12 @@ import { IBMPlexMono } from "./fonts/IBMPlexMono";
 import { BebasNeue } from "./fonts/BebasNeue";
 import SmoothScrollingProvider from "./helpers/smooth-scrolling-provider";
 import type { Metadata } from "next";
+import Meteors from "./components/Meteors";
 
 export const metadata: Metadata = {
 	title: "Hydare",
 	description:
-		"One-man studio based in Venetië van Java. Making your dream website comes true, one at a time.",
+		"One-man studio based in Venetië van Java. Making your epic clips or dream website comes true, one at a time.",
 	metadataBase: new URL("https://hydare.vercel.app"),
 	robots: {
 		index: true,
@@ -17,18 +18,18 @@ export const metadata: Metadata = {
 		nocache: true,
 	},
 	authors: [{ name: "Naufal Haidar Rauf", url: "https://hydiary.my.id" }],
-	keywords: [
-		"Next.js 14",
+  keywords: [
+    "Video editing",
+		"Next.js",
 		"Website Development",
 		"Freelance",
 		"Independent studio",
-		"React",
 	],
 	creator: "Naufal Haidar Rauf",
 	publisher: "Hydare",
 	openGraph: {
 		title: "Hydare",
-		description: `One-man studio based in Venetië van Java. Making your dream website comes true, one at a time.`,
+		description: `One-man studio based in Venetië van Java. Making your epic clips or dream website comes true, one at a time.`,
 		url: "https://hydare.vercel.app",
 		siteName: "Hydare",
 		type: "website",
@@ -42,7 +43,7 @@ export default function RootLayout({
 		<html lang="en" className="scroll-smooth scroll-my-4">
 			<body
 				className={`${IBMPlexMono.variable} ${BebasNeue.variable} antialiased mx-auto max-w-(--breakpoint-lg) py-14`}
-			>
+      >
 				<main className="">
 					<SmoothScrollingProvider>{children}</SmoothScrollingProvider>
 				</main>
