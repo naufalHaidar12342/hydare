@@ -12,7 +12,7 @@ export async function fetchVideoProjects():Promise<VideoProjectResponse> {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization":`Bearer ${process.env.HYGRAPH_TOKEN}`
+      // "Authorization":`Bearer ${process.env.HYGRAPH_TOKEN}`
     },
     next: {
       revalidate:600
