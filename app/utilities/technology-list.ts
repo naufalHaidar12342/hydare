@@ -10,61 +10,63 @@ import {
 	IconBrandGithub,
 } from "@tabler/icons-react";
 
+import Image from "next/image";
+
+export type ProjectType = "video-editing" | "websites";
+
 export type Technologies = {
-	technologyName: string;
-	technologyIcon: React.ComponentType<any>;
-	technologyDescription: string;
+  technologyName: string;
+  technologyLink: string;
+  technologyUsage: string;
+  technologyCategory: ProjectType[];
 };
 
 export default function technologyList(): Technologies[] {
 	return [
 		{
-			technologyName: "Visual Studio Code",
-			technologyIcon: IconBrandVscode,
-			technologyDescription:
-				"A powerful and popular code editor with a rich ecosystem of extensions, perfect for web development.",
+      technologyName: "Davinci Resolve 21.1 (free version)",
+      technologyLink: "https://www.blackmagicdesign.com/products/davinciresolve/",
+      technologyUsage:"Video editing software that I use",
+      technologyCategory:["video-editing"]
 		},
 		{
-			technologyName: "Next.js",
-			technologyIcon: IconBrandNextjs,
-			technologyDescription:
-				"A React framework for building server-rendered applications with ease.",
-		},
+      technologyName: "yt-dlp",
+      technologyUsage:"audio and video downloader, operated from inside command line/terminal",
+      technologyLink:"https://github.com/yt-dlp/yt-dlp",
+      technologyCategory:["video-editing"]
+    },
 		{
-			technologyName: "Figma",
-			technologyIcon: IconBrandFigma,
-			technologyDescription:
-				"A collaborative interface design tool for creating and prototyping UI/UX designs.",
-		},
+      technologyName: "Free Download Manager (FDM)",
+      technologyUsage:"App with friendly user interface to help me download audio and video. Also use yt-dlp package",
+      technologyLink:"https://www.freedownloadmanager.org/",
+      technologyCategory:["video-editing"]
+    },
 		{
-			technologyName: "Tailwind CSS",
-			technologyIcon: IconBrandTailwind,
-			technologyDescription:
-				"A utility-first CSS framework for rapid UI development with a focus on responsiveness and customization.",
-		},
+      technologyName: "Google Drive",
+      technologyUsage:"Cloud storage to help me share the rendered video with clients",
+      technologyLink:"https://drive.google.com",
+      technologyCategory:["video-editing"]
+    },
 		{
-			technologyName: "Vercel",
-			technologyIcon: IconBrandVercel,
-			technologyDescription:
-				"A cloud platform for static sites and Serverless Functions, optimized for Next.js applications.",
-		},
+      technologyName: "Next.js",
+      technologyUsage:"Website framework to help me focus making the website, think of it like a template that can be customized",
+      technologyLink:"https://nextjs.org",
+      technologyCategory:["websites"]
+    },
 		{
-			technologyName: "Git",
-			technologyIcon: IconBrandGit,
-			technologyDescription:
-				"A distributed version control system for tracking changes in source code during software development.",
-		},
+      technologyName: "Tailwind CSS",
+      technologyUsage:"CSS framework so I could implement design from wireframe much faster, compared to using vanilla CSS",
+      technologyLink:"https://nextjs.org",
+      technologyCategory:["websites"]
+    },
 		{
-			technologyName: "GitHub",
-			technologyIcon: IconBrandGithub,
-			technologyDescription:
-				"A web-based platform for version control and collaboration, allowing developers to host and review code, manage projects, and build software together.",
-		},
-		{
-			technologyName: "TypeScript",
-			technologyIcon: IconBrandTypescript,
-			technologyDescription:
-				"A superset of JavaScript that adds static types, enabling developers to catch errors early and improve code quality.",
-		},
+      technologyName: "Figma",
+      technologyUsage:"Design tool that is universal. I did some YouTube thumbnail design here, but mostly I use it for making the rough design for the website",
+      technologyLink:"https://www.figma.com/",
+      technologyCategory:["websites","video-editing"]
+    },
+
+
+
 	];
 }

@@ -12,6 +12,7 @@ import HoverTiltCard from "./components/HoverTiltCard";
 import technologyList from "./utilities/technology-list";
 import { col } from "motion/react-m";
 import { ProjectCollection } from "./components/ProjectCollection";
+import { TechnologyCollection } from "./components/TechnologyCollection";
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ project_type?:string | undefined}>}) {
 	const fetchedProjects = projectsPortfolio();
@@ -136,18 +137,49 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ p
 			</div>
 			<div className="mt-8 w-full flex flex-col" id="hydare-tech-stack">
 				<h3 className="text-4xl uppercase tracking-wider font-(family-name:--font-bebas-neue)">
-					Technologies I am using
+					Techs
 				</h3>
-				{/*<div className="grid max-md:grid-cols-1 md:max-lg:grid-cols-2 lg:grid-cols-3 gap-5 mt-2">
-					{fetchedTechStack.map((item) => (
-						<HoverTiltCard
-							key={`Service index for "${item.technologyName}"`}
-							cardTitle={item.technologyName}
-							accessoryIcon={<item.technologyIcon size={48} />}
-							cardContent={item.technologyDescription}
-						/>
-					))}
-				</div>*/}
+				<div role="tablist" aria-label="Technology categories" className="flex gap-x-6">
+          <Link
+            href="/?project_type=video-editing"
+            scroll={false}
+            role="tab"
+            id="video-editing-technology-tab"
+            aria-controls="technology-panel"
+            aria-selected={projectType === "video-editing"}
+            className={`rounded-lg px-3 py-2 ${
+              projectType === "video-editing"
+                ? "bg-waikawa-gray-300 text-obsidian"
+                : "text-foreground underline decoration-waikawa-gray-500"
+            }`}
+          >
+            For video editing
+          </Link>
+          <Link
+            href="/?project_type=websites"
+            scroll={false}
+            role="tab"
+            id="websites-technology-tab"
+            aria-controls="technology-panel"
+            aria-selected={projectType === "websites"}
+            className={`rounded-lg px-3 py-2 ${
+              projectType === "websites"
+                ? "bg-waikawa-gray-300 text-obsidian"
+                : "text-foreground underline decoration-waikawa-gray-500"
+            }`}
+          >
+            For websites
+          </Link>
+        </div>
+        <section
+          id="technology-panel"
+          role="tabpanel"
+          aria-labelledby={projectType === "websites" ? "websites-technology-tab" : "video-editing-technology-tab"}
+          tabIndex={0}
+        >
+          <TechnologyCollection projectType={projectType} />
+
+        </section>
 			</div>
 			<div className="mt-8 flex flex-col" id="hire-me">
 				<h2 className="text-5xl font-normal tracking-wider font-(family-name:--font-bebas-neue)">
