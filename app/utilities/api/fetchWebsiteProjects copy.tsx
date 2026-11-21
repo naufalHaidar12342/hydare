@@ -20,7 +20,7 @@ export async function fetchWebsiteProjects():Promise<WebsiteProjectResponse> {
     },
     body: JSON.stringify({
       query:`query WebsiteProjects{
-        websiteProjects{
+        websiteProjects(orderBy:createdAt_DESC){
           websiteName
           websiteLink
           websiteDescription

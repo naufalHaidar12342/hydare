@@ -19,7 +19,7 @@ export async function fetchVideoProjects():Promise<VideoProjectResponse> {
     },
     body: JSON.stringify({
       query:`query VideoProjects{
-        videoProjects{
+        videoProjects(orderBy:createdAt_DESC){
           videoTitle
           videoThumbnail{
             url
