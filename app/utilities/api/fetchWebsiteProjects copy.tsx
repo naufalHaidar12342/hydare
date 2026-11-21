@@ -1,3 +1,4 @@
+import { HYGRAPH_API_FALLBACK } from "../constants/hygraph-api-fallback"
 import { VideoProjectResponse } from "../types/video-project"
 import { WebsiteProjectResponse } from "../types/website-project"
 
@@ -8,7 +9,7 @@ export async function fetchWebsiteProjects():Promise<WebsiteProjectResponse> {
    * internalization (i18n)
    */
   const localeSetting=[]
-  const response = await fetch(`${process.env.HYGRAPH_API}`, {
+  const response = await fetch(`${process.env.HYGRAPH_API}` || HYGRAPH_API_FALLBACK, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
